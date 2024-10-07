@@ -1,0 +1,161 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Background Video */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(4px);
+    opacity: 0.8; /* Slight transparency */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.real-invitation-button {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: #203c0c; /* Gold text color */
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: 2px solid #bcb69e;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px); /* Adds a slight blur effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Slight shadow */
+}
+
+.real-invitation-button:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Slightly more visible on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+    transform: scale(1.05); /* Grow slightly on hover */
+}
+
+
+/* Event Details */
+.event-details-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+    animation: pulse 2s infinite; /* Infinite pulse animation */
+    top: 200px;
+}
+
+.event-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffcc00; /* Gold color for the title */
+}
+
+.event-description {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.event-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.event-info strong {
+    color: #ffcc00; /* Gold color for strong text */
+}
+
+.event-info span {
+    color: #fff; /* White color for details */
+}
+
+.event-note {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Falling Images */
+.falling-images-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction */
+}
+
+.falling-image {
+    position: absolute;
+    opacity: 0.7; /* Transparent images */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Rain Animation */
+@keyframes fall {
+    0% {
+        top: -10%; /* Start above the viewport */
+    }
+    100% {
+        top: 100%; /* Move to the bottom */
+    }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1); /* Original size */
+    }
+    50% {
+        transform: scale(1.05); /* Scale up by 5% */
+    }
+}
+
+/* QR Code styles */
+.qr-code-container {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    text-align: center;
+    z-index: 10;
+}
+
+.qr-code {
+    width: 100px; /* Small but scannable */
+    height: auto;
+    opacity: 0.9;
+}
+
+.qr-code-container p {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
+    text-align: center;
+    opacity: 0.8;
+}
+

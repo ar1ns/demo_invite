@@ -1,0 +1,290 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Background Video */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(4px);
+    opacity: 0.9;
+}
+
+/* Countdown Title */
+h2 {
+    color: #c4f000;
+    font-size: 50px;
+}
+
+/* Countdown Container */
+.countdown-container {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    z-index: 1;
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.time-unit {
+    font-size: 24px;
+    color: #302a2a;
+}
+
+#countdown span {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Balloon Container */
+.balloon-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 1;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    opacity: 0.8;
+    animation: float 10s linear infinite;
+}
+
+@keyframes float {
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+/* Scrolling Text */
+.header {
+    background-color: rgba(9, 9, 9, 0.534);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.scrolling-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 8s linear infinite;
+}
+
+.scrolling-text span {
+    color: #15a9da;
+    font-size: 25px;
+    padding: 0 20px;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* General Styles here (video background, countdown, etc.) */
+
+/* Birthday Hat */
+.birthday-hat {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 80px; /* Adjust as needed */
+    transform: rotate(180deg); /* Initially upside down */
+    cursor: pointer;
+    z-index: 10; /* Ensures it's clickable */
+    transition: transform 0.5s ease-in-out;
+}
+
+.birthday-hat.rotated {
+    transform: rotate(0deg); /* Rotate to normal position on click */
+}
+
+/* Falling items container */
+.falling-items-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none; /* No interaction */
+}
+
+.falling-item {
+    position: absolute;
+    animation: fall 8s linear forwards;
+    opacity: 0.9; /* Slight transparency */
+}
+
+/* Fall animation */
+@keyframes fall {
+    0% {
+        top: -100px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        top: 100vh; /* Off the screen */
+        opacity: 0;
+    }
+}
+
+/* Animal floating animation */
+@keyframes float-down {
+    0% {
+        top: -150px;
+        left: 50%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        left: 45%; /* Small horizontal movement */
+        opacity: 0;
+    }
+}
+/* Aesthetic "Click Me" Button Styles */
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.click-me-button {
+    background-color: rgba(255, 64, 129, 0.8); /* Semi-transparent background */
+    color: white;
+    padding: 12px 25px;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    border-radius: 30px; /* Rounded corners */
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.click-me-button:hover {
+    background-color: rgba(255, 64, 129, 1); /* Fully opaque on hover */
+    border-color: rgba(255, 255, 255, 1); /* Brighten border on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* More shadow on hover */
+}
+.burst {
+    animation: burst-animation 0.4s forwards; /* Run the burst animation */
+}
+
+@keyframes burst-animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1); /* Return to original size */
+        opacity: 0; /* Fade out */
+    }
+}
+
+/* General styles for mobile devices (max width 600px) */
+@media only screen and (max-width: 600px) {
+
+    /* Resize the countdown container */
+    .countdown-container {
+        font-size: 16px; /* Make the text smaller */
+        margin-top: 10px;
+    }
+
+    #countdown span {
+        font-size: 36px; /* Adjust the countdown numbers */
+    }
+
+    /* Adjust the button size */
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px; /* Make the button smaller */
+    }
+
+    /* Resize and move the QR code for mobile */
+    .qr-code {
+        width: 60px; /* Smaller QR code */
+    }
+
+    .qr-code-container p {
+        font-size: 10px;
+    }
+
+    /* Responsive video */
+    #background-video {
+        object-fit: cover;
+    }
+
+    /* Event details container responsive */
+    .event-details-container {
+        width: 90%; /* Make the container width 90% of the screen */
+        font-size: 14px; /* Smaller font size for event details */
+    }
+
+    /* Balloon and falling items */
+    .falling-item {
+        width: 30px; /* Make falling items smaller */
+    }
+}
+
+/* For larger screens like tablets or laptops */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .countdown-container {
+        font-size: 20px;
+    }
+
+    .event-details-container {
+        width: 80%;
+        font-size: 16px;
+    }
+}
+
+
+

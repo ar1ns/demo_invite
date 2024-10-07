@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Countdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video background -->
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="background-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Countdown Timer -->
+    <div class="countdown-container">
+        <h2 id="countdown-title">Event Countdown</h2>
+        <div id="countdown">
+            <div class="time-unit">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <div class="time-unit">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <div class="time-unit">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div class="time-unit">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+
+        <!-- New "Click Me" Button -->
+        <div class="button-container">
+            <a href="#" class="click-me-button" id="clickMeButton">Event Details</a>
+            <audio id="birthdaySound" src="birthday_sound.mp3" preload="auto"></audio>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Add click event listener to the button
+        document.getElementById('clickMeButton').addEventListener('click', function() {
+            const birthdaySound = document.getElementById('birthdaySound');
+            birthdaySound.play(); // Play the sound
+
+              // Trigger burst effect
+              this.classList.add('burst');
+
+            // Delay the redirection to allow the sound to play
+            setTimeout(() => {
+                window.location.href = "event-details.html"; // Redirect to the next page
+            }, 900); // 2 seconds delay
+        });
+    </script>
+</body>
+</html>
